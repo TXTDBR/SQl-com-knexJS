@@ -1,7 +1,6 @@
-const { where } = require('../database/connection');
 const knex = require('../database/connection');
 
-const getAll = (req, resp) => {
+const getAll = (req, resp, next) => {
     knex('users')
         .then(users => resp.json(users))
         .catch(e => next(e))
