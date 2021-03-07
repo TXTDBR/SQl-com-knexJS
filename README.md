@@ -29,7 +29,7 @@ Depois você precisa instalar uma das seguntes bibliotecas de banco de dados que
 
 O próprio knex módulo é uma função que pega um objeto de configuração para Knex classe, aceitando alguns parâmetros. O client parâmetro é obrigatório e determina qual adaptador cliente será usado com a biblioteca.
 
-```
+```javascript
 const knex = require('knex')({
   client: 'pg',
   version: '7.2',
@@ -48,7 +48,7 @@ As opções de conexão são passadas diretamente para o cliente de banco de dad
 
 Quando você usa o adaptador SQLite3, é necessário um nome de arquivo, não uma conexão de rede. Por exemplo:
 
-```
+```javascript
 const knex = require('knex')({
   client: 'sqlite3',
   connection: {
@@ -58,7 +58,7 @@ const knex = require('knex')({
 ```
 Uma função pode ser usada para determinar a configuração da conexão dinamicamente. Esta função não recebe parâmetros e retorna um objeto de configuração ou uma promessa para um objeto de configuração.
 
-```
+```javascript
 const knex = require('knex')({
   client: 'sqlite3',
   connection: () => ({
@@ -78,7 +78,7 @@ Se você pretende usar migrations em seu projeto veja os detalhes em [Migration 
 
 Você pode especificar ao inicializar a biblioteca a configuração das migrations.
 
-```
+```javascript
 const knex = require('knex')({
   client: 'mysql',
   connection: {
