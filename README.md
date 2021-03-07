@@ -67,4 +67,23 @@ const knex = require('knex')({
 });
 ```
 
+## Migrations
 
+### O que são Migrations?
+
+As migrações são uma forma de fazer alterações ou atualizações no banco de dados, como criar ou eliminar tabelas, bem como atualizar uma tabela com novas colunas com restrições por meio de scripts gerados. Podemos construir esses scripts por meio da linha de comando usando a CLI migration.
+
+Se você pretende usar migrations em [Migration CLI](#migration-cli)
+
+
+
+
+
+
+
+
+
+
+
+
+# Migration CLI
