@@ -73,6 +73,9 @@ As migrações são uma forma de fazer alterações ou atualizações no banco d
 
 Se você pretende usar migrations em seu projeto veja os detalhes em [Migration CLI](#migration)
 
+## Query Builder (criando consultas)
+
+O query builder é a interface usada para fazer a crir e executar o CRUD (inserir, selecionar, editar e excluir).
 
 ## Migration
 
