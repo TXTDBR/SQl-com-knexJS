@@ -76,7 +76,7 @@ Se você pretende usar migrations em seu projeto veja os detalhes em [Migration 
 
 ## Migration
 
-Você pode especificar ao inicializar a biblioteca a configuração de migração.
+Você pode especificar ao inicializar a biblioteca a configuração das migrations.
 
 ```
 const knex = require('knex')({
