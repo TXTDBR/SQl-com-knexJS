@@ -67,23 +67,73 @@ const knex = require('knex')({
 });
 ```
 
-## Migrations
-
-### O que são Migrations?
+## O que são Migrations?
 
 As migrações são uma forma de fazer alterações ou atualizações no banco de dados, como criar ou eliminar tabelas, bem como atualizar uma tabela com novas colunas com restrições por meio de scripts gerados. Podemos construir esses scripts por meio da linha de comando usando a CLI migration.
 
-Se você pretende usar migrations em [Migration CLI](#migration-cli)
+Se você pretende usar migrations em seu projeto veja os detalhes em [Migration CLI](#migration)
 
 
+## Migration
 
+Você pode especificar ao inicializar a biblioteca a configuração de migração.
 
+```
+const knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host : '127.0.0.1',
+    user : 'your_database_user',
+    password : 'your_database_password',
+    database : 'myapp_test'
+  },
+  migrations: {
+    tableName: 'migrations'
+  }
+});
+```
 
+### Migration CLI
 
+A migration CLI é fornecido com a instalação do knex.  Para instalar globalmente, execute:
 
+```bash
+  npm install knex -g
+```
 
+*Nota: se preferir não instalar globalmente não se esqueça do npx antes dos comandos da cli.*
 
+As migrations usam um arquivo knexfile.js, que especifica várias definições de configuração para o módulo. Para criar um novo knexfile, execute o seguinte:
 
+```bash
+  knex init
+```
 
+Um arquivo knexfile.js será craido. O arquivo contem várias configurações de banco de dados. Depois do knexfile.js criado você pode usar a cli para criar arquivos migrations, execute:
 
-# Migration CLI
+```bash
+  knex migrate:make nome_da_minha_migration
+```
+
+Para executar todas novas migrations que ainda não foram executadas, execute:
+
+```bash
+  knex migrate:latest
+```
+
+Para desfazer as alterações das últimas migrations executadas, execute:
+
+```bash
+  knex migrate:rollback
+```
+Para executar uma migration especifica, execute:
+
+```bash
+   knex migrate:up nome_da_migration.js
+```
+
+Para desfazer as alterações de uma migration especifica, execute:
+
+```bash
+   knex migrate:down nome_da_migration.js
+```
